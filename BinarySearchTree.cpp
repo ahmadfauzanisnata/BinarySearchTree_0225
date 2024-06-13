@@ -57,10 +57,131 @@ class BinaryTree
     }
 
     void search(string element, Node*& parent, Node*& currentNode)
-    {
-        // this function searches the currentnode of the specified node as well as the current node of its parent
+    
+       {// this function searches the currentnode of the specified node as well as the current node of its parent
         currentNode = ROOT;
         parent = NULL;
         while ((currentNode != NULL) && (currentNode->info != element))
-    }
+        {
+            parent = currentNode;
+            if (element < currentNode->info)
+                currentNode = currentNode->leftchild;
+            else   
+                currentNode = currentNode->rightchild;
+
+        }
+
+     }
+
+     void inorder(Node* ptr)
+    
+     {
+        if (ROOT == NULL)
+        {
+            cout << "Tree is empty" << endl;
+            return;
+        }
+        if (ptr != NULL)
+        {
+            inorder(ptr->leftchild); // LEFT
+            cout << ptr->info << " "; // ROOT
+            inorder(ptr->rightchild); // RIGHT
+        }
+
+     }
+     void preorder(Node* ptr)
+    
+     {
+        if (ROOT == NULL)
+        {
+            cout << "Tree is empty" << endl;
+            return;
+        }
+        if (ptr != NULL)
+        {
+            cout << ptr->info << " "; // ROOT
+            preorder(ptr->leftchild); // LEFT
+            
+            preorder(ptr->rightchild); // RIGHT
+        }
+
+     }
+     void postorder(Node* ptr)
+    
+     {
+        if (ROOT == NULL)
+        {
+            cout << "Tree is empty" << endl;
+            return;
+        }
+        if (ptr != NULL)
+        {
+            cout << ptr->info << " ";
+            postorder(ptr->leftchild); // LEFT
+            
+            postorder(ptr->rightchild); // RIGHT
+            cout << ptr->info << " "; // ROOT
+        }
+
+     }
+
+     
+     
+
+        
+    
+
+
+
+    
 };
+ int main()
+ {
+    BinaryTree x;
+    while (true)
+    {
+        cout << "\nMenu" << endl;
+        cout << "1. Implement insert operation" << endl;
+        cout << "2. Perform inorder traversel " << endl;
+        cout << "3. Perform preorder traversel" << endl;
+        cout << "4. Perform postorder traversel" << endl;
+        cout << "5. Exit" << endl;
+        cout << "\nEnter yout choice (1-5) : ";
+
+        char ch;
+        cin >> ch;
+        cout << endl;
+
+        switch (ch)
+        {
+            case '1':
+            {
+                cout << "Enter a word: ";
+                string word;
+                cin >> word;
+                x.insert(word);
+                break;
+            }
+            case '2':
+            {
+                x.inorder(x.ROOT);
+                break;
+            }
+            case '3':
+            {
+                x.preorder(x.ROOT);
+                break;
+            }
+            case '4':
+            {
+                x.postorder (x.ROOT);
+                break;
+            }
+            case '5':
+            {
+                exit(0);
+            }
+
+        }
+    }
+ }
