@@ -18,3 +18,12 @@ class Node
     }
     
 };
+class BinaryTree
+{
+    public:
+    Node* ROOT;
+    BinaryTree()
+    {
+        
+    }
+}
