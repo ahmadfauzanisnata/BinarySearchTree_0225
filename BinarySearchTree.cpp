@@ -24,6 +24,6 @@ class BinaryTree
     Node* ROOT;
     BinaryTree()
     {
-        
+        ROOT = nullptr; // initializing ROOT to NULL
     }
 }
