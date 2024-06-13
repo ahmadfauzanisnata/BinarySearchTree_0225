@@ -28,6 +28,7 @@ class BinaryTree
     }
     void insert(string element) // insert a node in the binary search treee
     {
+        Node* newNode = new Node(element, nullptr, nullptr); // allocate memory for the new node
 
     }
 }
