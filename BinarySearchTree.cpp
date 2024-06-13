@@ -37,6 +37,8 @@ class BinaryTree
         Node* currentNode = nullptr;
         search(element, parent, currentNode); //locate the node which will be the parent of the node to be ins
 
+        if (parent == nullptr) // if the parent is null (tree is empty)
+
         
 
     }
